@@ -108,9 +108,6 @@ pub fn main() !void {
         // uuh if we need to run a syscall as the child process what do we do
         // like this is fine for syscalls with ≤2 args but what about >2 args
 
-        // ah I can read memory from /proc/{pid}/mem
-        // rather than using ptrace to look at individual bytes
-
         try waitForSyscall(fork_pid);
 
         switch (syscall) {
